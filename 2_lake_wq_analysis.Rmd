@@ -121,12 +121,15 @@ mapview(mean_spatial,zcol='log10_mean_chl')
 # Class work
 
 ## 3) What is the correlation between Secchi Disk Depth and Chlorophyll a for
-sites with at least 200 observations?
+## sites with at least 200 observations?
 
 - Here, I just want a plot of chla vs secchi for all sites 
 
 ```{r}
-#Your code here
+
+ggplot(chla_secchi_200, aes(x=secchi, y=chla)) +
+  geom_point(shape=1) +
+  theme(legend.position=c(0.6,0.2))
 
 
 ```
@@ -134,11 +137,12 @@ sites with at least 200 observations?
 
 ## Why might this be the case? 
 
+Secchi is a method of measuring clarity (one of the oldest lake measurments!) 
 
 ## 2) What states have the most data? 
 
 ### 2a) First you will need to make a lagos spatial dataset that has the total 
-number of counts per site.
+## number of counts per site.
 
 ```{r}
 
